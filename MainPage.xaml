@@ -1,0 +1,76 @@
+﻿
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm" 
+             xmlns:local="clr-namespace:FormsMaui"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:Class="FormsMaui.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="mushroom.png"
+               Aspect="AspectFill"
+               Opacity="0.2"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+                <!-- Title Label -->
+                <Label Text="Plan Your Trip"
+                       FontSize="36"
+                       HorizontalOptions="Center"
+                       TextColor="black"
+                       FontAttributes="Bold" />
+
+                <!-- Subtitle or Description -->
+                <Label Text="Start a new journey or modify an existing trip by clicking the buttons below."
+                       FontSize="18"
+                       HorizontalOptions="Center"
+                       TextColor="black"
+                       Margin="0,10,0,0" />
+
+                <!-- Buttons for Plan or Edit Trip -->
+                <VerticalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <!-- Plan a Trip Button -->
+                    <Button Text="Plan a Trip"
+                            BackgroundColor="#4CAF50"
+                            TextColor="black"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            WidthRequest="250"
+                            Clicked="OnPlanTripClicked">
+                        
+                        <Button.Shadow>
+                            <Shadow Brush="Black" Opacity="0.3" Radius="10" Offset="2,2"/>
+                        </Button.Shadow>
+                    </Button>
+
+                    <!-- Edit Your Trip Button -->
+                    <Button Text="Edit Your Trip"
+                            BackgroundColor="#FF9800"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            WidthRequest="250"
+                            >
+                        <Button.Shadow>
+                            <Shadow Brush="Black" Opacity="0.3" Radius="10" Offset="2,2"/>
+                        </Button.Shadow>
+                    </Button>
+                </VerticalStackLayout>
+
+                <!-- Additional Information -->
+                <Label Text="Click on one of the options to proceed."
+                       FontSize="14"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       Margin="0,30,0,0"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
